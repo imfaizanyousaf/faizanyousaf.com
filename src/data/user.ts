@@ -1,8 +1,8 @@
 export const USER = {
-  firstName: "Chánh Đại",
-  lastName: "Nguyễn",
-  displayName: "Chánh Đại",
-  username: "ncdai",
+  firstName: "Faizan",
+  lastName: "Yousaf",
+  displayName: "Faizan Yousaf",
+  username: "imfaizanyousaf",
   gender: "male",
   pronouns: "he/him",
   bio: "Creating with code. Small details matter.",
@@ -11,10 +11,10 @@ export const USER = {
     "Design Engineer",
     "Open Source Contributor",
   ],
-  address: "Thanh My Tay Ward, Ho Chi Minh City, Viet Nam",
-  phoneNumber: "Kzg0Nzc3ODg4MTQ4", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
-  email: "ZGFpQGNoYW5oZGFpLmNvbQ==", // base64 encoded
-  website: "https://chanhdai.com",
+  address: "Phalia, M.B.DIN, Pakistan",
+  phoneNumber: "KzkyIDMwMiA4NTQ4Mzky", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
+  email: "eW91c2FmbXVnaGFsNDc3QGdtYWlsLmNvbQ==", // base64 encoded
+  website: "https://faizanyousaf.com",
   otherWebsites: [
     "https://dai.ng",
     "https://dai.so",
@@ -28,17 +28,12 @@ export const USER = {
     "https://ncdai.net",
     "https://dai.is-a.dev",
   ],
-  jobTitle: "Design Engineer",
+  jobTitle: "Web Developer",
   jobs: [
     {
-      title: "Senior Frontend Developer & UI Design Lead",
-      company: "Simplamo",
-      website: "https://simplamo.com?ref=IN-926722",
-    },
-    {
-      title: "Founder",
-      company: "Quaric",
-      website: "https://quaric.com",
+      title: "Junior Web Developer",
+      company: "DMN Technology",
+      website: "https://www.dmnhk.com/",
     },
   ],
   about: `
@@ -52,7 +47,7 @@ I'm also the creator of [React Wheel Picker](https://react-wheel-picker.chanhdai
 
 Let's connect and collaborate!
   `,
-  avatar: "https://assets.chanhdai.com/images/chanhdai-avatar-ghibli.jpeg",
+  avatar: "https://avatars.githubusercontent.com/u/86225377?",
   ogImage: "https://assets.chanhdai.com/images/screenshot-og-image-dark.png",
   namePronunciationUrl: "https://assets.chanhdai.com/audio/chanhdai.mp3",
   keywords:

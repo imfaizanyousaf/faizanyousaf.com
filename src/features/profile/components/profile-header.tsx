@@ -21,16 +21,36 @@ export function ProfileHeader() {
         </div>
 
         {/* Flag of Viet Nam */}
+        {/* className="absolute top-0 -left-px h-8 sm:h-9" */}
         <svg
-          className="absolute top-0 -left-px h-8 sm:h-9"
-          viewBox="0 0 30 20"
           xmlns="http://www.w3.org/2000/svg"
+          className="absolute top-0 -left-px h-8 sm:h-9"
+          width="50"
+          height="33"
+          fill="none"
+          viewBox="0 0 50 33"
         >
-          <rect width="30" height="20" fill="#F00" />
-          <polygon
-            points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85"
-            fill="#FFEB00"
-          />
+          <g clipPath="url(#a)">
+            <path fill="#fff" d="M50 0H0v33h50V0Z" />
+            <path fill="#01411C" d="M50 0H12.5v33H50V0Z" />
+            <path
+              fill="#fff"
+              d="M31.25 26.4c5.523 0 10-4.433 10-9.9 0-5.468-4.477-9.9-10-9.9s-10 4.432-10 9.9c0 5.467 4.477 9.9 10 9.9Z"
+            />
+            <path
+              fill="#01411C"
+              d="M39.897 21.032a9.012 9.012 0 0 0 .76-12.811c-3.363-3.746-9.157-4.084-12.94-.754a9.012 9.012 0 0 0-.762 12.812c3.364 3.746 9.158 4.083 12.942.753Z"
+            />
+            <path
+              fill="#fff"
+              d="m34.897 9.091 4.212 4.692-6.194-1.344 5.81-2.517-3.206 5.416-.622-6.247Z"
+            />
+          </g>
+          <defs>
+            <clipPath id="a">
+              <path fill="#fff" d="M0 0h50v33H0z" />
+            </clipPath>
+          </defs>
         </svg>
       </div>
 
