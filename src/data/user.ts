@@ -49,8 +49,8 @@ Let's connect and collaborate!
   `,
   avatar: "https://avatars.githubusercontent.com/u/86225377?",
   ogImage: "https://assets.chanhdai.com/images/screenshot-og-image-dark.png",
-  namePronunciationUrl: "https://assets.chanhdai.com/audio/chanhdai.mp3",
+  namePronunciationUrl: "/faizanyousaf.mp3",
   keywords:
     "ncdai, nguyenchanhdai, nguyen chanh dai, chanhdai, chanh dai, iamncdai, quaric, zadark, nguyễn chánh đại, chánh đại",
-  dateCreated: "2023-10-20", // YYYY-MM-DD
+  dateCreated: "2025-08-05", // YYYY-MM-DD
 };
