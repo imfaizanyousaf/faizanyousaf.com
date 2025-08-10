@@ -37,15 +37,15 @@ export const USER = {
     },
   ],
   about: `
-Hello, World! I am Chánh Đại — a Design Engineer passionate about creating high-performance, user-centric software solutions with intuitive and engaging designs.
+Hello, World! I am Faizan Yousaf — a Full-Stack Web Developer and UI/UX enthusiast passionate about crafting high-performance, intuitive, and visually minimal digital experiences.
 
-With 5+ years of experience, I specialize in building high-quality web and mobile applications using Next.js, React, TypeScript, and modern front-end technologies. Beyond work, I love exploring new technologies and turning ideas into reality through personal projects.
+With years of hands-on experience, I specialize in building scalable, user-focused applications using Laravel, Vue/React, Inertia.js, and other modern frontend technologies like Tailwind CSS. My work bridges robust backend systems with sleek, engaging interfaces, ensuring both reliability and delight for end-users.
 
-One of my key projects, [ZaDark](https://zadark.com), enhances the Zalo experience on PC and Web, surpassing 80,000 downloads on [SourceForge](https://sourceforge.net/projects/zadark) and 15,000 active users on the [Chrome Web Store](https://chromewebstore.google.com/detail/llfhpkkeljlgnjgkholeppfnepmjppob) since 2022.
+I've built solutions ranging from TV streaming platforms to patient management software and custom UI/UX design portfolios. My projects often combine data-driven precision with modern, minimal aesthetics, making complex systems easy to use.
 
-I'm also the creator of [React Wheel Picker](https://react-wheel-picker.chanhdai.com) — iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support. It has earned 221 stars on [GitHub](https://github.com/ncdai/react-wheel-picker) and was selected for **Vercel's Open Source Program** summer 2025 cohort, receiving $3,600 in Vercel platform credits, an OSS Starter Pack, and priority community support to fuel its ongoing development.
+Beyond client work, I enjoy experimenting with new tools, optimizing workflows, and pushing creative boundaries through personal projects — whether it's a refined admin dashboard, a dynamic content management system, or a streamlined live-TV category manager.
 
-Let's connect and collaborate!
+Let's connect and turn bold ideas into powerful, user-friendly solutions!
   `,
   avatar: "https://avatars.githubusercontent.com/u/86225377?",
   ogImage: "https://assets.chanhdai.com/images/screenshot-og-image-dark.png",
