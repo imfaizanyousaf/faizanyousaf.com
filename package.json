@@ -1,24 +1,24 @@
 {
-  "name": "chanhdai.com",
+  "name": "faizanyousaf.com",
   "version": "0.1.0",
-  "description": "A minimal portfolio, component registry, and blog.",
-  "homepage": "https://chanhdai.com",
+  "description": "A minimal portfolio.",
+  "homepage": "https://faizanyousaf.com",
   "license": "MIT",
   "author": {
-    "name": "Nguyen Chanh Dai",
-    "email": "dai@chanhdai.com",
-    "url": "https://github.com/ncdai"
+    "name": "Faizan Yousaf",
+    "email": "yousafmughal477@gmail.com",
+    "url": "https://github.com/imfaizanyousaf"
   },
   "contributors": [
     {
-      "name": "Nguyen Chanh Dai",
-      "email": "dai@chanhdai.com",
-      "url": "https://github.com/ncdai"
+      "name": "Faizan Yousaf",
+      "email": "yousafmughal477@gmail.com",
+      "url": "https://github.com/imfaizanyousaf"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ncdai/chanhdai.com.git"
+    "url": "git+https://github.com/imfaizanyousaf/faizanyousaf.com"
   },
   "scripts": {
     "dev": "next dev -p 1408 --turbopack",

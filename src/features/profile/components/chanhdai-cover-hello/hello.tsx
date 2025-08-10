@@ -5,12 +5,12 @@ import { AnimatePresence } from "motion/react";
 import * as motion from "motion/react-m";
 import React, { useCallback, useEffect, useState } from "react";
 
-import { ChanhDaiMark } from "@/components/chanhdai-mark";
+import { FaizanMark } from "@/components/faizan-mark";
 import { Button } from "@/components/ui/button";
 import { SimpleTooltip } from "@/components/ui/tooltip";
 import { AppleHelloVietnameseEffect } from "@/registry/apple-hello-effect";
 
-const layers = ["xin-chao", "chanhdai-wordmark"] as const;
+const layers = ["xin-chao", "faizan-wordmark"] as const;
 
 export function Hello() {
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -56,14 +56,14 @@ export function Hello() {
             />
           )} */}
 
-          {layers[currentIndex] === "chanhdai-wordmark" && (
+          {layers[currentIndex] === "faizan-wordmark" && (
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.5 }}
             >
-              <ChanhDaiMark className="h-12 sm:h-16" />
+              <FaizanMark className="h-12 sm:h-16" />
             </motion.div>
           )}
         </div>

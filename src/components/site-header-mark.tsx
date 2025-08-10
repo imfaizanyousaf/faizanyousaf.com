@@ -5,14 +5,14 @@ import * as motion from "motion/react-m";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
-import { ChanhDaiMark } from "./chanhdai-mark";
+import { FaizanMark } from "./faizan-mark";
 
 export function SiteHeaderMark() {
   const pathname = usePathname();
-  return pathname === "/" ? <ChanhDaiMarkMotion /> : <ChanhDaiMark />;
+  return pathname === "/" ? <FaizanMarkMotion /> : <FaizanMark />;
 }
 
-function ChanhDaiMarkMotion() {
+function FaizanMarkMotion() {
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(false);
   const distanceRef = useRef(160);
@@ -40,7 +40,7 @@ function ChanhDaiMarkMotion() {
   return (
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 512 256"
+      viewBox="0 0 210 129"
       initial={{
         opacity: 0,
         transform: "translateY(8px)",
@@ -52,7 +52,7 @@ function ChanhDaiMarkMotion() {
       transition={{ duration: 0.3 }}
     >
       <path
-        d="M192 256H64v-64h128v64ZM448 64H320v128h128v64H256V0h192v64ZM64 192H0V64h64v128ZM512 192h-64V64h64v128ZM192 64H64V0h128v64Z"
+        d="M193.318 128.299c-5.494 0-9.644-1.169-12.449-3.507-2.689-2.338-4.033-5.961-4.033-10.871 0-5.027 1.344-8.709 4.033-11.047 2.805-2.338 6.955-3.506 12.449-3.506 5.611 0 9.761 1.168 12.449 3.506 2.806 2.338 4.209 6.02 4.209 11.047 0 9.585-5.553 14.378-16.658 14.378ZM78.347 126.02V33.965h20.69l-.175 27.528h3.507c1.52-6.663 3.683-12.215 6.488-16.657 2.805-4.442 6.312-7.773 10.521-9.994 4.325-2.221 9.41-3.332 15.254-3.332 10.638 0 18.704 3.74 24.198 11.222 5.611 7.481 8.416 19.23 8.416 35.244v48.044h-25.425V80.781c0-9.819-1.461-16.95-4.383-21.392-2.806-4.559-6.955-6.838-12.449-6.838-4.676 0-8.592 1.461-11.748 4.384-3.157 2.922-5.553 6.78-7.189 11.572-1.52 4.676-2.338 9.936-2.455 15.781v41.732h-25.25Zm-63.02 0V67.105H.773V48.517l24.548 1.052V46.24c-4.091-.935-7.481-2.397-10.17-4.384-2.571-2.104-4.441-4.617-5.61-7.54-1.17-2.922-1.754-6.02-1.754-9.293 0-5.026 1.286-9.351 3.858-12.975 2.571-3.74 6.195-6.605 10.87-8.592C27.193 1.351 32.686.3 38.999.3c5.377 0 10.228.701 14.553 2.104 4.442 1.286 8.008 2.922 10.696 4.91L62.67 30.107c-2.805-1.987-5.961-3.623-9.468-4.91-3.507-1.285-6.839-1.928-9.995-1.928-3.507 0-6.429.935-8.767 2.805-2.22 1.87-3.331 4.91-3.331 9.118 0 2.922.584 5.26 1.753 7.014 1.286 1.636 2.806 2.864 4.559 3.682 1.87.701 3.682 1.169 5.436 1.403h21.04v19.814H39.876v58.915H15.327Z"
         fill="currentColor"
       />
     </motion.svg>

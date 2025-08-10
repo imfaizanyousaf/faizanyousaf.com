@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   transpilePackages: ["next-mdx-remote"],
-  allowedDevOrigins: ["chanhdai-macbook.local"],
+  allowedDevOrigins: ["http://localhost:1408"],
   devIndicators: false,
   images: {
     remotePatterns: [

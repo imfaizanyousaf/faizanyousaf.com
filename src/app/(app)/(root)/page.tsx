@@ -26,7 +26,7 @@ export default function Page() {
         }}
       />
 
-      <div className="mx-auto md:max-w-4xl">
+      <div className="mx-auto md:max-w-5xl">
         <ProfileCover />
         <ProfileHeader />
         <Separator />
