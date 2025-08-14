@@ -51,15 +51,6 @@ export function Brand() {
           </div>
         </div>
       </BrandContextMenu>
-
-      <div className="flex h-12 items-center justify-center pb-px">
-        <Button variant="default" asChild>
-          <Link href="/blog/chanhdai-brand">
-            Faizan Brand
-            <ArrowRightIcon />
-          </Link>
-        </Button>
-      </div>
     </Panel>
   );
 }

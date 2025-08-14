@@ -1,6 +1,24 @@
 import type { TechStack } from "../types/tech-stack";
 
 export const TECH_STACK: TechStack[] = [
+  {
+    key: "laravel",
+    title: "Laravel",
+    href: "https://laravel.com/",
+    categories: ["Framework"],
+  },
+  {
+    key: "vue",
+    title: "Vue",
+    href: "https://vuejs.org/",
+    categories: ["Library", "UI Library"],
+  },
+  {
+    key: "inertia",
+    title: "Inertia",
+    href: "https://inertiajs.com/",
+    categories: ["Library"],
+  },
   // {
   //   key: "typescript",
   //   title: "TypeScript",
@@ -119,12 +137,6 @@ export const TECH_STACK: TechStack[] = [
   //   href: "https://loopback.io/",
   //   categories: ["Framework"],
   // },
-  {
-    key: "laravel",
-    title: "Laravel",
-    href: "https://laravel.com/",
-    categories: ["Framework"],
-  },
   {
     key: "git",
     title: "Git",

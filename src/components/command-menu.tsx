@@ -295,20 +295,6 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
               <TypeIcon />
               Copy Logotype as SVG
             </CommandItem>
-
-            <CommandItem
-              onSelect={() => handleOpenLink("/blog/chanhdai-brand")}
-            >
-              <TriangleDashedIcon />
-              Brand Guidelines
-            </CommandItem>
-
-            <CommandItem asChild>
-              <a href="https://assets.chanhdai.com/chanhdai-brand.zip" download>
-                <DownloadIcon />
-                Download Brand Assets
-              </a>
-            </CommandItem>
           </CommandGroup>
 
           <CommandSeparator />

@@ -7,11 +7,11 @@ const nextConfig: NextConfig = {
   devIndicators: false,
   images: {
     remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "assets.chanhdai.com",
-        port: "",
-      },
+      // {
+      //   protocol: "",
+      //   hostname: "",
+      //   port: "",
+      // },
     ],
   },
   async rewrites() {
