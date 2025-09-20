@@ -23,7 +23,7 @@ export const USER = {
     {
       title: "Web Developer",
       company: "DMN Technology",
-      website: "https://www.dmnhk.com/",
+      website: "https://dmntechnology.com/",
     },
   ],
   about: `

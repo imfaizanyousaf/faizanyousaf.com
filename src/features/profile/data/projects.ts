@@ -2,43 +2,42 @@ import type { Project } from "../types/projects";
 
 export const PROJECTS: Project[] = [
   {
-    id: "zadark",
-    title: "ZaDark",
+    id: "hms",
+    title: "Patient Management System",
     period: {
-      start: "01.2022",
+      start: "2024",
     },
-    link: "https://zadark.com",
+    link: "https://demo-hms.bosonstudio.com/",
     skills: [
       "Pet Project",
-      "Open Source",
-      "Browser Extension",
-      "CLI",
-      "Docusaurus 3",
+      "Local Market",
+      "Laravel",
+      "Vue",
+      "Inertia",
     ],
-    description: `ZaDark adds Dark Mode, anti-peeking, customizable fonts, backgrounds, and more to Zalo Web and PC.
-- Earned 10M+ VND in net sales from a paid Safari Extension.
-- 80,000+ downloads on SourceForge (awarded Community Leader badge by SourceForge)
-- 15,000+ active users via Chrome Web Store
-- Bronze Medal — 10th Design, Manufacturing, and Application Award 2022`,
-    logo: "https://assets.chanhdai.com/images/project-logos/zadark.svg",
-    isExpanded: true,
+    description: `- A web-based application for hospitals to manage patients and staff more efficiently.
+    - Try [Demo](https://demo-hms.bosonstudio.com/) -Username: admin, Password: password 
+    - Multi-tenant  
+    - Role-based access control  
+    - Patient, staff, payments and other management modules  
+    - Modern UI with [shadcn/vue](https://www.shadcn-vue.com/)`,
+    logo: "/images/boson-studio-logo.svg",
+    isExpanded: false,
   },
   {
-    id: "qabox",
-    title: "QABox",
+    id: "auftrag",
+    title: "AuftragNow",
     period: {
-      start: "07.2023",
-      end: "07.2023",
+      start: "2024",
     },
-    link: "https://github.com/ncdai/qabox",
+    link: "https://auftragnow.com/",
     skills: [
-      "University Project",
-      "PHP",
-      "MySQL",
-      "MVC",
-      "Docker",
-      "Docker Compose",
+      "Laravel",
+      "Vue",
+      "Inertia",
     ],
-    description:
-      "- Course: Distributed Applications — FIT@HCMUS\n- Project Score: 10/10\n- Source Code: https://github.com/ncdai/qabox",
-  }];
+    description: `- An online platform connecting customers with local service providers.`,
+    logo: "/images/af-logo.jpg",
+    isExpanded: false,
+  },
+];

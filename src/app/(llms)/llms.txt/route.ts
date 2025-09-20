@@ -1,7 +1,4 @@
 import { SITE_INFO } from "@/config/site";
-import { getAllPosts } from "@/data/blog";
-
-const allPosts = getAllPosts();
 
 const content = `# faizanyousaf.com
 
@@ -12,10 +9,6 @@ const content = `# faizanyousaf.com
 - [Projects](${SITE_INFO.url}/projects.md): Selected projects that show my skills and creativity.
 - [Awards](${SITE_INFO.url}/awards.md): My key awards and honors.
 - [Certifications](${SITE_INFO.url}/certifications.md): Certifications and credentials I've earned.
-
-## Blog
-
-${allPosts.map((item) => `- [${item.metadata.title}](${SITE_INFO.url}/blog/${item.slug}.md): ${item.metadata.description}`).join("\n")}
 `;
 
 export const dynamic = "force-static";

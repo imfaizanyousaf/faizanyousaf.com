@@ -52,11 +52,11 @@ export default function Page() {
         <Projects />
         <Separator />
 
-        <Awards />
+        {/* <Awards />
         <Separator />
 
         <Certifications />
-        <Separator />
+        <Separator /> */}
 
         <Brand />
         <Separator />

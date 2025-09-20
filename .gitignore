@@ -42,4 +42,5 @@ next-env.d.ts
 
 # ncdai
 .ncdai
+.idea
 package-lock.json
