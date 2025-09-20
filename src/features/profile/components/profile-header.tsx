@@ -70,7 +70,7 @@ export function ProfileHeader() {
         </div>
 
         <div className="border-t border-edge">
-          <h1 className="flex items-center pl-4 text-3xl font-semibold">
+          <h1 className="flex items-center pl-4 text-[1.3rem] font-semibold sm:text-3xl">
             {USER.displayName}
             &nbsp;
             <SimpleTooltip content="Verified">

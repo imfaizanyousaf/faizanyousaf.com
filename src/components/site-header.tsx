@@ -48,7 +48,7 @@ export function SiteHeader() {
           <CommandMenu />
           <NavItemGitHub />
           <ToggleTheme />
-          <MobileNav className="sm:hidden" items={MAIN_NAV} />
+          {MAIN_NAV.length > 0 && <MobileNav className="sm:hidden" items={MAIN_NAV} />}
         </div>
       </div>
     </SiteHeaderWrapper>
