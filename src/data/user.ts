@@ -29,11 +29,9 @@ export const USER = {
   about: `
 Hello, World! I am Faizan Yousaf — a Full-Stack Web Developer and UI/UX enthusiast passionate about crafting high-performance, intuitive, and visually minimal digital experiences.
 
-With years of hands-on experience, I specialize in building scalable, user-focused applications using Laravel, Vue/React, Inertia.js, and other modern frontend technologies like Tailwind CSS. My work bridges robust backend systems with sleek, engaging interfaces, ensuring both reliability and delight for end-users.
+With years of hands-on experience, I specialize in building scalable, user-focused web applications. My work bridges robust backend systems with sleek, engaging interfaces, ensuring both reliability and delight for end-users.
 
-I've built solutions ranging from TV streaming platforms to patient management software and custom UI/UX design portfolios. My projects often combine data-driven precision with modern, minimal aesthetics, making complex systems easy to use.
-
-Beyond client work, I enjoy experimenting with new tools, optimizing workflows, and pushing creative boundaries through personal projects — whether it's a refined admin dashboard, a dynamic content management system, or a streamlined live-TV category manager.
+Beyond client work, I enjoy experimenting with new tools, optimizing workflows, and pushing creative boundaries through personal projects.
 
 Let's connect and turn bold ideas into powerful, user-friendly solutions!
   `,
