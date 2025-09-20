@@ -14,8 +14,15 @@ import { SITE_INFO } from "@/config/site";
 import { findNeighbour, getAllPosts, getPostBySlug } from "@/data/blog";
 import { USER } from "@/data/user";
 import type { Post } from "@/types/blog";
+import fs from "fs";
+import path from "path";
 
 export async function generateStaticParams() {
+  const blogDir = path.join(process.cwd(), "src/content/blog");
+  if (!fs.existsSync(blogDir)) {
+    console.warn("Blog directory does not exist, returning empty params");
+    return [];
+  }
   const posts = getAllPosts();
   return posts.map((post) => ({
     slug: post.slug,
