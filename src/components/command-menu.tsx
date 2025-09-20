@@ -6,19 +6,15 @@ import {
   BriefcaseBusinessIcon,
   CircleUserIcon,
   CornerDownLeftIcon,
-  DownloadIcon,
   LetterTextIcon,
   MoonStarIcon,
-  RssIcon,
   SunIcon,
-  TextIcon,
-  TriangleDashedIcon,
   TypeIcon,
 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { toast } from "sonner";
 
 import {
@@ -32,7 +28,6 @@ import {
 } from "@/components/ui/command";
 import { SOCIAL_LINKS } from "@/features/profile/data/social-links";
 import { cn } from "@/lib/utils";
-import type { Post } from "@/types/blog";
 import { copyText } from "@/utils/copy";
 
 import { FaizanMark, getMarkSVG } from "./faizan-mark";
@@ -114,7 +109,7 @@ const SOCIAL_LINK_ITEMS: CommandLinkItem[] = SOCIAL_LINKS.map((item) => ({
   openInNewTab: true,
 }));
 
-export function CommandMenu({ posts }: { posts: Post[] }) {
+export function CommandMenu() {
   const router = useRouter();
 
   const { setTheme, resolvedTheme } = useTheme();
@@ -175,17 +170,17 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
     [setTheme]
   );
 
-  const { blogLinks, componentLinks } = useMemo(
-    () => ({
-      blogLinks: posts
-        .filter((post) => post.metadata?.category !== "components")
-        .map(postToCommandLinkItem),
-      componentLinks: posts
-        .filter((post) => post.metadata?.category === "components")
-        .map(postToCommandLinkItem),
-    }),
-    [posts]
-  );
+  // const { blogLinks, componentLinks } = useMemo(
+  //   () => ({
+  //     blogLinks: posts
+  //       .filter((post) => post.metadata?.category !== "components")
+  //       .map(postToCommandLinkItem),
+  //     componentLinks: posts
+  //       .filter((post) => post.metadata?.category === "components")
+  //       .map(postToCommandLinkItem),
+  //   }),
+  //   [posts]
+  // );
 
   return (
     <>
@@ -458,12 +453,12 @@ function CommandMenuKbd({ className, ...props }: React.ComponentProps<"kbd">) {
   );
 }
 
-function postToCommandLinkItem(post: Post): CommandLinkItem {
-  const isComponent = post.metadata?.category === "components";
+// function postToCommandLinkItem(post: Post): CommandLinkItem {
+//   const isComponent = post.metadata?.category === "components";
 
-  return {
-    title: post.metadata.title,
-    href: isComponent ? `/components/${post.slug}` : `/blog/${post.slug}`,
-    keywords: isComponent ? ["component"] : undefined,
-  };
-}
+//   return {
+//     title: post.metadata.title,
+//     href: isComponent ? `/components/${post.slug}` : `/blog/${post.slug}`,
+//     keywords: isComponent ? ["component"] : undefined,
+//   };
+// }

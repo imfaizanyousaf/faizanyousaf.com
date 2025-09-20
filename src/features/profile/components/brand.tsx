@@ -1,12 +1,7 @@
-import { ArrowRightIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 import dynamic from "next/dynamic";
-import Link from "next/link";
-
 import { FaizanMark } from "@/components/faizan-mark";
 import { FaizanWordmark } from "@/components/faizan-wordmark";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-
 import { Panel, PanelHeader, PanelTitle } from "./panel";
 
 const BrandContextMenu = dynamic(() =>
