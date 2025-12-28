@@ -1,6 +1,6 @@
 "use client";
 
-import { SendIcon } from "lucide-react";
+import { MessageCircle, SendIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -24,7 +24,7 @@ export function Chatbot() {
     {
       role: "assistant",
       content:
-        "Hello! I'm My AI Ghost, Faizan's virtual assistant. Ask me anything about Faizan and his work!",
+        "Hello! I'm, Faizan's virtual AI assistant. Ask me anything about Faizan and his work!",
     },
   ]);
   const [input, setInput] = useState("");
@@ -91,14 +91,14 @@ export function Chatbot() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" size="icon">
-          <SendIcon className="size-4" />
+        <Button variant="outline" size="icon:lg" className="fixed right-4 p-8 bottom-[calc(var(--bottom,1rem)+env(safe-area-inset-bottom,0px))] z-50 lg:right-8">
+          <MessageCircle className="size-6" />
           <span className="sr-only">Open Chat</span>
         </Button>
       </DialogTrigger>
       <DialogContent className="flex h-[600px] max-w-md flex-col">
         <DialogHeader>
-          <DialogTitle>My AI Ghost</DialogTitle>
+          <DialogTitle>Faizan's Ghost</DialogTitle>
           <DialogDescription>Chat with Faizan's AI assistant</DialogDescription>
         </DialogHeader>
         <ScrollArea className="flex-1 pr-4" ref={scrollRef}>

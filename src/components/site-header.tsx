@@ -19,10 +19,6 @@ const CommandMenu = dynamic(() =>
   import("@/components/command-menu").then((mod) => mod.CommandMenu)
 );
 
-// const Chatbot = dynamic(() =>
-//   import("@/components/chatbot").then((mod) => mod.Chatbot)
-// );
-
 export function SiteHeader() {
 
   return (
@@ -51,7 +47,6 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <CommandMenu />
           <NavItemGitHub />
-          {/* <Chatbot /> */}
           <ToggleTheme />
           {MAIN_NAV.length > 0 && <MobileNav className="sm:hidden" items={MAIN_NAV} />}
         </div>
