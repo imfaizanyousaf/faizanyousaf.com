@@ -15,9 +15,7 @@ export const USER = {
   phoneNumber: "KzkyIDMwMiA4NTQ4Mzky", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
   email: "eW91c2FmbXVnaGFsNDc3QGdtYWlsLmNvbQ==", // base64 encoded
   website: "https://faizanyousaf.com",
-  otherWebsites: [
-    "bosonstudio.com"
-  ],
+  otherWebsites: ["bosonstudio.com"],
   jobTitle: "Web Developer",
   jobs: [
     {
@@ -38,6 +36,7 @@ Let's connect and turn bold ideas into powerful, user-friendly solutions!
   avatar: "/images/avatar.png",
   ogImage: "/images/screenshot-og-image-dark.png",
   namePronunciationUrl: "/faizanyousaf.mp3",
+  namePronunciationUrl2: "/fahhhhh.mp3",
   keywords:
     "imfaizanyousaf, faizanyousaf, faizan yousaf, faizan.usaf, yousaf, bosonstudio, فیضان یوسف ",
   dateCreated: "2025-08-05", // YYYY-MM-DD

@@ -8,13 +8,7 @@ export const PROJECTS: Project[] = [
       start: "2024",
     },
     link: "https://demo-hms.bosonstudio.com/",
-    skills: [
-      "Pet Project",
-      "Local Market",
-      "Laravel",
-      "Vue",
-      "Inertia",
-    ],
+    skills: ["Pet Project", "Local Market", "Laravel", "Vue", "Inertia"],
     description: `- A web-based application for hospitals to manage patients and staff more efficiently.
     - Try [Demo](https://demo-hms.bosonstudio.com/) -Username: admin, Password: password 
     - Multi-tenant  
@@ -31,13 +25,22 @@ export const PROJECTS: Project[] = [
       start: "2024",
     },
     link: "https://auftragnow.com/",
-    skills: [
-      "Laravel",
-      "Vue",
-      "Inertia",
-    ],
+    skills: ["Laravel", "Vue", "Inertia"],
     description: `- An online platform connecting customers with local service providers.`,
     logo: "/images/af-logo.jpg",
+    isExpanded: false,
+  },
+  {
+    id: "tripvlog",
+    title: "TripVlog",
+    period: {
+      start: "2024",
+      end: "2025",
+    },
+    link: "https://tripvlog.com/",
+    skills: ["Laravel", "Nuxt"],
+    description: `- A tiktok style travel blogging platform where users can share their travel experiences using videos and can book hotels.`,
+    logo: "/images/tripvlog.png",
     isExpanded: false,
   },
 ];

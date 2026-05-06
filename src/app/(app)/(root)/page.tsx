@@ -14,6 +14,7 @@ import { ProfileHeader } from "@/features/profile/components/profile-header";
 import { Projects } from "@/features/profile/components/projects";
 import { SocialLinks } from "@/features/profile/components/social-links";
 import { TeckStack } from "@/features/profile/components/teck-stack";
+import { GitHubContributionsSection } from "@/features/profile/components/github-contributions";
 import { cn } from "@/lib/utils";
 
 export default function Page() {
@@ -50,6 +51,9 @@ export default function Page() {
         <Separator />
 
         <Projects />
+        <Separator />
+
+        <GitHubContributionsSection />
         <Separator />
 
         {/* <Awards />

@@ -82,6 +82,7 @@ export function ProfileHeader() {
                 <PronounceMyName
                   className="translate-y-px"
                   namePronunciationUrl={USER.namePronunciationUrl}
+                  namePronunciationUrl2={USER.namePronunciationUrl2}
                 />
               </>
             )}

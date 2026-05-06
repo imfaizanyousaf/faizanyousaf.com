@@ -13,4 +13,10 @@ export const SOCIAL_LINKS: SocialLink[] = [
     description: "imfaizanyousaf",
     href: "https://github.com/imfaizanyousaf",
   },
+  {
+    icon: "/images/link-icons/instagram.webp",
+    title: "Instagram",
+    description: "faizan.usaf",
+    href: "https://www.instagram.com/faizan.usaf/",
+  },
 ];
