@@ -18,11 +18,12 @@ import type { Post } from "@/types/blog";
 export async function generateStaticParams() {
   return [];
 
-  // Disabled for now
+  /* Disabled for now
   const posts = getPostsByCategory("components");
   return posts.map((post) => ({
     slug: post.slug,
   }));
+  */
 }
 
 export async function generateMetadata({
@@ -95,8 +96,8 @@ export default async function Page({
     slug: string;
   }>;
 }) {
-  notFound(); // Disabled for now
-
+  return notFound();
+  /* Disabled for now
   const slug = (await params).slug;
   const post = getPostBySlug(slug);
 
@@ -172,4 +173,5 @@ export default async function Page({
       <div className="screen-line-before h-4 w-full" />
     </>
   );
+  */
 }

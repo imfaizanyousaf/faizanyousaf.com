@@ -19,8 +19,7 @@ import path from "path";
 
 export async function generateStaticParams() {
   return [];
-  
-  // Disabled the rest of the generation for now
+  /* Disabled for now
   const blogDir = path.join(process.cwd(), "src/content/blog");
   if (!fs.existsSync(blogDir)) {
     console.warn("Blog directory does not exist, returning empty params");
@@ -30,6 +29,7 @@ export async function generateStaticParams() {
   return posts.map((post) => ({
     slug: post.slug,
   }));
+  */
 }
 
 export async function generateMetadata({
@@ -102,8 +102,8 @@ export default async function Page({
     slug: string;
   }>;
 }) {
-  notFound(); // Disabled for now
-
+  return notFound();
+  /* Disabled for now
   const slug = (await params).slug;
   const post = getPostBySlug(slug);
 
@@ -175,6 +175,7 @@ export default async function Page({
       <div className="screen-line-before h-4 w-full" />
     </>
   );
+  */
 }
 
 function getPostUrl(post: Post) {
