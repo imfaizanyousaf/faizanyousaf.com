@@ -16,6 +16,9 @@ import { USER } from "@/data/user";
 import type { Post } from "@/types/blog";
 
 export async function generateStaticParams() {
+  return [];
+
+  // Disabled for now
   const posts = getPostsByCategory("components");
   return posts.map((post) => ({
     slug: post.slug,
@@ -92,6 +95,8 @@ export default async function Page({
     slug: string;
   }>;
 }) {
+  notFound(); // Disabled for now
+
   const slug = (await params).slug;
   const post = getPostBySlug(slug);
 

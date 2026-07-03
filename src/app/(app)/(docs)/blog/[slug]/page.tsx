@@ -18,6 +18,9 @@ import fs from "fs";
 import path from "path";
 
 export async function generateStaticParams() {
+  return [];
+  
+  // Disabled the rest of the generation for now
   const blogDir = path.join(process.cwd(), "src/content/blog");
   if (!fs.existsSync(blogDir)) {
     console.warn("Blog directory does not exist, returning empty params");
@@ -99,6 +102,8 @@ export default async function Page({
     slug: string;
   }>;
 }) {
+  notFound(); // Disabled for now
+
   const slug = (await params).slug;
   const post = getPostBySlug(slug);
 

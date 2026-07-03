@@ -43,4 +43,16 @@ export const PROJECTS: Project[] = [
     logo: "/images/tripvlog.png",
     isExpanded: false,
   },
+  {
+    id: "donorcloud",
+    title: "DonorCloud",
+    period: {
+      start: "2026",
+    },
+    link: "https://www.donorcloud.co.uk/",
+    skills: ["Laravel", "Nuxt UI", "Vue", "Inertia"],
+    description: `- Run campaigns, events, and Gift Aid in one fundraising platform built for UK charities; designed to maximise every donation.`,
+    logo: "/images/dc.svg",
+    isExpanded: false,
+  },
 ];
