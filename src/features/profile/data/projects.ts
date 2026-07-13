@@ -42,6 +42,7 @@ export const PROJECTS: Project[] = [
     description: `- A tiktok style travel blogging platform where users can share their travel experiences using videos and can book hotels.`,
     logo: "/images/tripvlog.png",
     isExpanded: false,
+    skip_utm: true,
   },
   {
     id: "donorcloud",

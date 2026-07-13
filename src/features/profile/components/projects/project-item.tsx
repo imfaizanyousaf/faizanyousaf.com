@@ -86,7 +86,7 @@ export function ProjectItem({
               <SimpleTooltip content="Open Project Link">
                 <a
                   className="flex size-6 shrink-0 items-center justify-center text-muted-foreground hover:text-foreground"
-                  href={addQueryParams(project.link, UTM_PARAMS)}
+                  href={project.skip_utm ? project.link : addQueryParams(project.link, UTM_PARAMS)}
                   target="_blank"
                   rel="noopener"
                 >
