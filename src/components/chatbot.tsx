@@ -78,7 +78,7 @@ export function Chatbot() {
           role: "assistant",
           content: response.ok
             ? data.response
-            : "We're having some technical issues right now. Please try again in a moment, or reach out to Faizan directly at yousafmughal477@gmail.com.",
+            : "We're having some technical issues right now. Please try again in a moment, or reach out to Faizan directly at inbox@faizanyousaf.com.",
         },
       ]);
     } catch {
@@ -87,7 +87,7 @@ export function Chatbot() {
         {
           role: "assistant",
           content:
-            "We're having some technical issues right now. Please try again in a moment, or reach out to Faizan directly at yousafmughal477@gmail.com.",
+            "We're having some technical issues right now. Please try again in a moment, or reach out to Faizan directly at inbox@faizanyousaf.com.",
         },
       ]);
     } finally {

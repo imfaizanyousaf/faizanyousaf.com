@@ -13,7 +13,7 @@ export const USER = {
   ],
   address: "Phalia, M.B.DIN, Pakistan",
   phoneNumber: "KzkyIDMwMiA4NTQ4Mzky", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
-  email: "eW91c2FmbXVnaGFsNDc3QGdtYWlsLmNvbQ==", // base64 encoded
+  email: "aW5ib3hAZmFpemFueW91c2FmLmNvbQ==", // base64 encoded
   website: "https://faizanyousaf.com",
   otherWebsites: ["bosonstudio.com"],
   jobTitle: "Web Developer",
