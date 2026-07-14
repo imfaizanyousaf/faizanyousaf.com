@@ -28,7 +28,7 @@ export function Overview() {
 
         <IntroItem icon={MapPinIcon} content={USER.address} />
 
-        <PhoneItem phoneNumber={USER.phoneNumber} />
+        {/* <PhoneItem phoneNumber={USER.phoneNumber} /> */}
 
         <EmailItem email={USER.email} />
 
