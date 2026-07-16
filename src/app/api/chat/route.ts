@@ -148,7 +148,7 @@ export async function POST(request: Request) {
         extra_body: {
           chat_template_kwargs: { thinking: false, reasoning_effort: "low" },
         },
-      }
+      } as any
     );
 
     const encoder = new TextEncoder();
