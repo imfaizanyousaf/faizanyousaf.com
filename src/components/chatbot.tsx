@@ -1,9 +1,11 @@
 "use client";
 
-import { MessageCircle, SendIcon, X } from "lucide-react";
+import { Maximize2, MessageCircle, Minimize2, SendIcon, X } from "lucide-react";
 import { AnimatePresence } from "motion/react";
 import * as motion from "motion/react-m";
 import { useEffect, useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -30,6 +32,7 @@ function TypingDots() {
 
 export function Chatbot() {
   const [open, setOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
@@ -48,6 +51,13 @@ export function Chatbot() {
     }
   }, [messages, open]);
 
+  // Focus textarea when chatbot opens
+  useEffect(() => {
+    if (open) {
+      setTimeout(() => textareaRef.current?.focus(), 100);
+    }
+  }, [open]);
+
   // Auto-resize textarea
   useEffect(() => {
     const el = textareaRef.current;
@@ -63,6 +73,9 @@ export function Chatbot() {
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setIsLoading(true);
+    
+    // Explicitly keep focus on textarea (e.g., if user clicked the send button)
+    setTimeout(() => textareaRef.current?.focus(), 0);
 
     try {
       const response = await fetch("/api/chat", {
@@ -71,16 +84,32 @@ export function Chatbot() {
         body: JSON.stringify({ message: input, history: messages }),
       });
 
-      const data = await response.json();
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "assistant",
-          content: response.ok
-            ? data.response
-            : "We're having some technical issues right now. Please try again in a moment, or reach out to Faizan directly at inbox@faizanyousaf.com.",
-        },
-      ]);
+      if (!response.ok || !response.body) {
+        throw new Error("Failed to fetch");
+      }
+
+      setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
+      setIsLoading(false);
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let done = false;
+      let text = "";
+
+      while (!done) {
+        const { value, done: doneReading } = await reader.read();
+        done = doneReading;
+        const chunkValue = decoder.decode(value, { stream: true });
+        
+        if (chunkValue) {
+          text += chunkValue;
+          setMessages((prev) => {
+            const newMessages = [...prev];
+            newMessages[newMessages.length - 1].content = text;
+            return newMessages;
+          });
+        }
+      }
     } catch {
       setMessages((prev) => [
         ...prev,
@@ -90,7 +119,6 @@ export function Chatbot() {
             "We're having some technical issues right now. Please try again in a moment, or reach out to Faizan directly at inbox@faizanyousaf.com.",
         },
       ]);
-    } finally {
       setIsLoading(false);
     }
   };
@@ -108,13 +136,19 @@ export function Chatbot() {
       <AnimatePresence>
         {open && (
           <motion.div
+            layout
             key="chat-panel"
             initial={{ opacity: 0, y: 16, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 16, scale: 0.97 }}
             transition={{ type: "spring", stiffness: 400, damping: 30 }}
-            className="fixed right-4 bottom-[calc(4.5rem+env(safe-area-inset-bottom,0px))] z-50 flex w-[min(380px,calc(100vw-2rem))] flex-col rounded-2xl border border-popover-border bg-background shadow-popover lg:right-8"
-            style={{ maxHeight: "min(560px, calc(100dvh - 8rem))" }}
+            className={cn(
+              "fixed z-50 flex flex-col rounded-2xl border border-popover-border bg-background shadow-popover",
+              isExpanded
+                ? "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100vw-2rem)] max-w-2xl h-[calc(100dvh-2rem)] max-h-[800px]"
+                : "right-4 bottom-[calc(4.5rem+env(safe-area-inset-bottom,0px))] w-[min(380px,calc(100vw-2rem))] lg:right-8"
+            )}
+            style={isExpanded ? {} : { maxHeight: "min(560px, calc(100dvh - 8rem))" }}
           >
             {/* Header */}
             <div className="flex items-center gap-3 border-b border-border px-4 py-3">
@@ -128,15 +162,26 @@ export function Chatbot() {
                 <p className="text-sm font-semibold leading-tight">Faizan&apos;s Ghost</p>
                 <p className="text-xs text-muted-foreground">AI assistant · always online</p>
               </div>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="size-7 shrink-0 text-muted-foreground"
-                onClick={() => setOpen(false)}
-              >
-                <X className="size-4" />
-                <span className="sr-only">Close</span>
-              </Button>
+              <div className="flex items-center gap-1">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="size-7 shrink-0 text-muted-foreground"
+                  onClick={() => setIsExpanded(!isExpanded)}
+                >
+                  {isExpanded ? <Minimize2 className="size-4" /> : <Maximize2 className="size-4" />}
+                  <span className="sr-only">{isExpanded ? "Shrink" : "Expand"}</span>
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="size-7 shrink-0 text-muted-foreground"
+                  onClick={() => setOpen(false)}
+                >
+                  <X className="size-4" />
+                  <span className="sr-only">Close</span>
+                </Button>
+              </div>
             </div>
 
             {/* Messages */}
@@ -157,13 +202,28 @@ export function Chatbot() {
                     )}
                     <div
                       className={cn(
-                        "max-w-[78%] rounded-2xl px-3.5 py-2 text-sm leading-relaxed",
+                        "max-w-[85%] rounded-2xl px-3.5 py-2 text-sm leading-relaxed overflow-hidden",
                         message.role === "user"
                           ? "rounded-tr-sm bg-primary text-primary-foreground"
                           : "rounded-tl-sm bg-muted text-foreground"
                       )}
                     >
-                      {message.content}
+                      {message.role === "user" ? (
+                        message.content
+                      ) : (
+                        <div className="[&_a]:underline [&_a]:underline-offset-4 [&_a]:font-medium [&_strong]:font-semibold [&_ul]:list-disc [&_ul]:pl-4 [&_ul]:mb-2 [&_ol]:list-decimal [&_ol]:pl-4 [&_ol]:mb-2 [&_p]:mb-2 [&>*:last-child]:mb-0 break-words">
+                          <ReactMarkdown
+                            remarkPlugins={[remarkGfm]}
+                            components={{
+                              a: ({ node, ...props }) => (
+                                <a {...props} target="_blank" rel="noopener noreferrer" />
+                              ),
+                            }}
+                          >
+                            {message.content}
+                          </ReactMarkdown>
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -193,7 +253,6 @@ export function Chatbot() {
                 placeholder="Ask me anything…"
                 className="max-h-[100px] min-h-[36px] flex-1 resize-none rounded-xl border border-input bg-muted/50 px-3 py-2 text-sm leading-relaxed placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/30 focus-visible:outline-none disabled:opacity-50"
                 rows={1}
-                disabled={isLoading}
               />
               <Button
                 onClick={sendMessage}
