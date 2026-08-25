@@ -23,10 +23,16 @@ const TECH_STACK_TEXT = Object.entries(groupedTechStack)
   .map(([category, items]) => `- **${category}**: ${items.join(", ")}`)
   .join("\n");
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENROUTER_API_KEY,
-  baseURL: "https://openrouter.ai/api/v1",
-});
+let _openai: OpenAI | null = null;
+function getOpenAI() {
+  if (!_openai) {
+    _openai = new OpenAI({
+      apiKey: process.env.OPENROUTER_API_KEY,
+      baseURL: "https://openrouter.ai/api/v1",
+    });
+  }
+  return _openai;
+}
 
 const SYSTEM_PROMPT = `You are "Faizan's Ghost", an AI assistant on Faizan Yousaf's personal portfolio website.
 
@@ -138,7 +144,7 @@ export async function POST(request: Request) {
       { role: "user", content: message },
     ];
 
-    const completion = await openai.chat.completions.create({
+    const completion = await getOpenAI().chat.completions.create({
       model: "deepseek/deepseek-chat-v3-0324",
       messages: messages,
       temperature: 1,
