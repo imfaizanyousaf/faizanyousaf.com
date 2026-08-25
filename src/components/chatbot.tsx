@@ -116,7 +116,7 @@ export function Chatbot() {
         {
           role: "assistant",
           content:
-            "We're having some technical issues right now. Please try again in a moment, or reach out to Faizan directly at inbox@faizanyousaf.com.",
+            "We're having some technical issues right now. Please try again in a moment, or reach out to Faizan directly at yousafmughal477@gmail.com.",
         },
       ]);
       setIsLoading(false);

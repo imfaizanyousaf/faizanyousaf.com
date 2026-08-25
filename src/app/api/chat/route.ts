@@ -9,20 +9,23 @@ const PROJECTS_TEXT = PROJECTS.map(
     }- Skills: ${p.skills.join(", ")}\n${p.description}`
 ).join("\n\n");
 
-const groupedTechStack = TECH_STACK.reduce((acc, curr) => {
-  const category = curr.categories[0];
-  if (!acc[category]) acc[category] = [];
-  acc[category].push(curr.title);
-  return acc;
-}, {} as Record<string, string[]>);
+const groupedTechStack = TECH_STACK.reduce(
+  (acc, curr) => {
+    const category = curr.categories[0];
+    if (!acc[category]) acc[category] = [];
+    acc[category].push(curr.title);
+    return acc;
+  },
+  {} as Record<string, string[]>
+);
 
 const TECH_STACK_TEXT = Object.entries(groupedTechStack)
   .map(([category, items]) => `- **${category}**: ${items.join(", ")}`)
   .join("\n");
 
 const openai = new OpenAI({
-  apiKey: process.env.NVIDIA_API_KEY,
-  baseURL: "https://integrate.api.nvidia.com/v1",
+  apiKey: process.env.OPENROUTER_API_KEY,
+  baseURL: "https://openrouter.ai/api/v1",
 });
 
 const SYSTEM_PROMPT = `You are "Faizan's Ghost", an AI assistant on Faizan Yousaf's personal portfolio website.
@@ -41,7 +44,7 @@ const SYSTEM_PROMPT = `You are "Faizan's Ghost", an AI assistant on Faizan Yousa
 - Never hallucinate or invent information. If details aren't provided below, state that you don't know and provide his contact details.
 
 ## Contact Details (show these whenever you cannot answer or the user wants to get in touch)
-- **Email**: inbox@faizanyousaf.com
+- **Email**: yousafmughal477@gmail.com
 - **LinkedIn**: https://www.linkedin.com/in/faizan-yousaf-951b45199/
 - **GitHub**: https://github.com/imfaizanyousaf
 - **Website**: https://faizanyousaf.com
@@ -59,7 +62,7 @@ const SYSTEM_PROMPT = `You are "Faizan's Ghost", an AI assistant on Faizan Yousa
 - **Job Title**: Full-Stack Web Developer & UI/UX Enthusiast
 - **Education**: Bachelor of Science in Computer Science (BSCS) with a 3.51 CGPA
 - **Hobbies & Interests**: Playing video games, reading poetry, and eating Biryani!
-- **Preferred Contact Method**: Email (inbox@faizanyousaf.com)
+- **Preferred Contact Method**: Email (yousafmughal477@gmail.com)
 
 ## About
 Faizan Yousaf is a Full-Stack Web Developer passionate about crafting high-performance, intuitive, and visually minimal digital experiences. He specializes in building scalable, user-focused web applications that bridge robust backend systems with sleek, engaging interfaces. Outside of client work he enjoys experimenting with new tools, optimizing workflows, and building personal projects.
@@ -86,14 +89,14 @@ ${TECH_STACK_TEXT}
 ${PROJECTS_TEXT}
 
 ## Availability & Hiring
-Faizan is open to freelance projects, collaborations, and full-time opportunities. For project inquiries or to hire him, he strongly prefers to be contacted via email (inbox@faizanyousaf.com).
+Faizan is open to freelance projects, collaborations, and full-time opportunities. For project inquiries or to hire him, he strongly prefers to be contacted via email (yousafmughal477@gmail.com).
 
 ## Frequently Asked Questions
 **Q: What services does Faizan offer?**
 A: Full-stack web development (Laravel, Next.js), UI/UX design, front-end development, and graphic design.
 
 **Q: How can I hire Faizan or work with him?**
-A: Reach out via his preferred method: email at inbox@faizanyousaf.com.
+A: Reach out via his preferred method: email at yousafmughal477@gmail.com.
 
 **Q: What is Faizan's experience level?**
 A: Faizan has been in web development and design since 2020 — over 5 years of hands-on experience across development and design roles.
@@ -111,8 +114,8 @@ type Message = {
 
 export async function POST(request: Request) {
   try {
-    if (!process.env.NVIDIA_API_KEY) {
-      console.error("NVIDIA_API_KEY not set");
+    if (!process.env.OPENROUTER_API_KEY) {
+      console.error("OPENROUTER_API_KEY not set");
       return Response.json(
         { error: "API key not configured" },
         { status: 500 }
@@ -135,21 +138,14 @@ export async function POST(request: Request) {
       { role: "user", content: message },
     ];
 
-    const completion = await openai.chat.completions.create(
-      {
-        model: "deepseek-ai/deepseek-v4-flash",
-        messages: messages,
-        temperature: 1,
-        top_p: 0.95,
-        max_tokens: 16384,
-        stream: true,
-      },
-      {
-        extra_body: {
-          chat_template_kwargs: { thinking: false, reasoning_effort: "low" },
-        },
-      } as any
-    );
+    const completion = await openai.chat.completions.create({
+      model: "deepseek/deepseek-chat-v3-0324",
+      messages: messages,
+      temperature: 1,
+      top_p: 0.95,
+      max_tokens: 16384,
+      stream: true,
+    });
 
     const encoder = new TextEncoder();
     const stream = new ReadableStream({
