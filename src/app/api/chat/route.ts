@@ -78,8 +78,8 @@ ${TECH_STACK_TEXT}
 
 ## Work Experience
 ### Web Developer — DMN Technology (2025 – Present, Full-time)
-- **AuftragNow**: Online platform connecting customers with local service providers.
-- **Appforce Pro**: Streaming app for Samsung TV built with Tizen Studio & React.
+- Confidential Project - Online platform connecting customers with local service providers.
+- Confidential Project - Streaming app for Samsung TV built with Tizen Studio & React.
 
 ### Junior Web Developer — Boson Studio (2024 – Present, Part-time)
 - **Patient Management System**: Web app for hospitals to manage patients, staff, payments, and more.

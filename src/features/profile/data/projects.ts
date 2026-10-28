@@ -19,18 +19,6 @@ export const PROJECTS: Project[] = [
     isExpanded: false,
   },
   {
-    id: "auftrag",
-    title: "AuftragNow",
-    period: {
-      start: "2024",
-    },
-    link: "https://auftragnow.com/",
-    skills: ["Laravel", "Vue", "Inertia"],
-    description: `- An online platform connecting customers with local service providers.`,
-    logo: "/images/af-logo.jpg",
-    isExpanded: false,
-  },
-  {
     id: "tripvlog",
     title: "TripVlog",
     period: {

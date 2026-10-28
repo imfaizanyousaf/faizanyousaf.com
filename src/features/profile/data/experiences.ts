@@ -14,16 +14,10 @@ export const EXPERIENCES: Experience[] = [
         },
         employmentType: "Full-time",
         icon: "code",
-        description:
-          ` - [AuftragNow](https://auftragnow.com/) -an online platform connecting customers with local service providers.  
-            \n - [Appforce Pro](https://appforcepro.com/) -Streaming app for Samsung TV using Tizen Studio & React.
+        description: ` - **** -an online platform connecting customers with local service providers.  
+            \n - **** -Streaming app for Samsung TV using Tizen Studio & React.
           `,
-        skills: [
-          "Laravel",
-          "Vue",
-          "React",
-          "Inertia.js",
-        ],
+        skills: ["Laravel", "Vue", "React", "Inertia.js"],
         isExpanded: true,
       },
     ],
@@ -42,16 +36,10 @@ export const EXPERIENCES: Experience[] = [
         },
         employmentType: "Part-time",
         icon: "code",
-        description:
-          ` - In-house project: [Patient Management System](https://demo-hms.bosonstudio.com/)
+        description: ` - In-house project: [Patient Management System](https://demo-hms.bosonstudio.com/)
             \n - A web-based application for hospitals to manage patients and staff more efficiently.
           `,
-        skills: [
-          "Laravel",
-          "Vue",
-          "React",
-          "Inertia.js",
-        ],
+        skills: ["Laravel", "Vue", "React", "Inertia.js"],
         isExpanded: false,
       },
     ],
@@ -71,20 +59,14 @@ export const EXPERIENCES: Experience[] = [
         },
         employmentType: "Part-time",
         icon: "design",
-        description:
-          ` - Designed landing pages and web apps.
+        description: ` - Designed landing pages and web apps.
             - Created wireframes and prototypes in Figma.
             - Improved layouts, colors, and typography.
             - Prepared graphics in Photoshop and Illustrator.
             - Practiced responsive design for web and mobile.
             - Worked with developers on design handoff.
           `,
-        skills: [
-          "UI/UX",
-          "Figma",
-          "Adobe Photoshop",
-          "Adobe Illustrator"
-        ],
+        skills: ["UI/UX", "Figma", "Adobe Photoshop", "Adobe Illustrator"],
         isExpanded: false,
       },
       {
@@ -96,22 +78,16 @@ export const EXPERIENCES: Experience[] = [
         },
         employmentType: "Part-time",
         icon: "design",
-        description:
-          ` - Designed banners, icons, and product graphics.  
+        description: ` - Designed banners, icons, and product graphics.  
             - Created layouts for web pages and promotions.  
             - Assisted in building brand visuals and identity.  
             - Edited images for online store and marketing use.  
             - Supported team in website design and updates.  
         `,
-        skills: [
-          "Adobe Photoshop",
-          "Adobe Illustrator"
-        ],
+        skills: ["Adobe Photoshop", "Adobe Illustrator"],
         isExpanded: false,
       },
     ],
     isCurrentEmployer: false,
   },
-
-
 ];
