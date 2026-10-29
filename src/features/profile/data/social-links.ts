@@ -4,19 +4,25 @@ export const SOCIAL_LINKS: SocialLink[] = [
   {
     icon: "/images/link-icons/linkedin.webp",
     title: "LinkedIn",
-    description: "faizan-yousaf",
+    description: "@faizan-yousaf",
     href: "https://www.linkedin.com/in/faizan-yousaf-951b45199/",
   },
   {
     icon: "/images/link-icons/github.webp",
     title: "GitHub",
-    description: "imfaizanyousaf",
+    description: "@imfaizanyousaf",
     href: "https://github.com/imfaizanyousaf",
   },
   {
     icon: "/images/link-icons/instagram.webp",
     title: "Instagram",
-    description: "faizan.usaf",
+    description: "@faizan.usaf",
     href: "https://www.instagram.com/faizan.usaf/",
+  },
+  {
+    icon: "/images/link-icons/dev-null.webp",
+    title: "/dev/null",
+    description: "@imfaizanyousaf",
+    href: "https://dev-null.sh/@imfaizanyousaf",
   },
 ];
